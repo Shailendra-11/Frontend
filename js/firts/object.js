@@ -20,14 +20,8 @@ console.log("start")
 //    console.log(error)
 // })
 
-
-
-
 // console.log("end")
 
 
+// debounce and throttig
 
-
-
-
- console.log("end")
