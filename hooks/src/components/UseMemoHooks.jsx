@@ -1,18 +1,29 @@
-import React, { useMemo, useState } from 'react'
+import React, { useCallback, useMemo, useState } from 'react'
+import MemoReact from './MemoReact'
 
 function UseMemoHooks() {
     const [incerment, setIncerment] = useState(0)
     const [first, setFirst] = useState(0)
 
-    // Heavy calculation runs only when `first` changes
+
     const calculatedValue = useMemo(() => {
         console.log("Running heavy calculation...")
         let result = 0
         for (let i = 0; i < 12000; i++) {
             result += i
         }
-        return first + 2 // return computed value
+        console.log("having calcalution ", result)
+        return result;// return computed value
     }, [first])
+
+
+    const CallMe = useCallback(() => {
+        console.log("HIII")
+    }, [])
+
+
+
+
 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
@@ -58,7 +69,16 @@ function UseMemoHooks() {
                 <p className="mt-2 text-indigo-700 font-semibold">
                     Memoized Value: {calculatedValue}
                 </p>
+
+                <button
+                    onClick={CallMe}
+                    className="mt-3 px-4 py-2 bg-green-500 text-white rounded-lg"
+                >
+                    Call Callback
+                </button>
+                <MemoReact />
             </div>
+
         </div>
     )
 }
