@@ -1,5 +1,6 @@
 import './App.css'
 import ClassBaseHooks from './components/ClassBaseHooks'
+import Fomm from './components/Fomm'
 import UseEffectHooks from './components/UseEffectHooks'
 import UseLayoutHookas from './components/UseLayoutHookas'
 import UseMemoHooks from './components/UseMemoHooks'
@@ -14,7 +15,8 @@ function App() {
      {/* <UseStateHooks/> */}
      {/* <UseEffectHooks/> */}
       {/* <UseLayoutHookas/> */}
-      <UseMemoHooks/>
+      {/* <UseMemoHooks/> */}
+      <Fomm/>
     </>
   )
 }
